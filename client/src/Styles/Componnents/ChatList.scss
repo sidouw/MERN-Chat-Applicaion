@@ -1,0 +1,138 @@
+.Chatitem-list{
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+    height: 95%;
+    overflow-y: scroll;
+    border-top: 1px solid $h-color ;
+    
+    &::-webkit-scrollbar {
+        width: 0.2rem;
+      }
+    &::-webkit-scrollbar-track {
+        background: none;
+      }
+      
+    &::-webkit-scrollbar-thumb {
+        background: $s-color;
+      }
+}
+
+.last-chat-elem__status{
+    // display: none;
+    position: absolute;
+    top: 80%;
+    left: 55%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    
+}
+
+.Chatitem-list-container{
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.last-chat-elem{
+    margin: .2rem 1rem .2rem 0;
+    padding: .5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color .1s;
+    &:hover{
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 5px 20px -16px rgba(0, 0, 0, 0.6);
+    }
+
+    &__container{
+        display: flex;
+        align-items: center;
+        transition:500ms;
+        height: 4rem;
+        position: relative;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        &__data{
+            display: flex;
+            justify-content: space-between;
+            padding: .4rem 0 0 0;
+            height: 2rem;
+
+        }
+    }
+    &__user{
+        padding-top: .5rem;
+        width: 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    &__message{  
+        height: 1rem;
+        font-size: .8rem;
+        width: 9rem;
+        overflow: hidden;
+    }
+    &__time{
+        font-size: .7rem;
+        font-weight: 500;
+        padding: 0 .5rem;
+        // margin-right: .2rem;
+    }
+    & img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        margin-right: 1rem;
+        margin-left: .2rem;
+    }
+    &__span{
+        border-radius: 50px;
+        padding: 0 .8rem;
+        background: rgba(255, 255, 255, 0.3);
+        font-size: 2.2rem;
+        margin: .5rem 1rem .5rem .5rem ;
+    }
+}
+
+.chat-filter {
+    align-self: center;
+    background: $h-color;
+    color: $fg-color;
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 .5rem 0;
+    padding: .2rem .5rem;
+    border: none;
+    border-radius: 50px;
+}
+
+
+@media(min-width:600px){
+    .last-chat-elem{
+        &__content{
+            display: flex;
+        }
+}
+.Chat-List-container{
+    width: 22rem;
+}
+.chat-filter{
+    width: 22rem;
+}
+
+.last-chat-elem__status{
+    top: 70%;
+    left: 20%;
+}
+}
+

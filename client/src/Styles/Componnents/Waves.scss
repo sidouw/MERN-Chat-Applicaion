@@ -1,0 +1,47 @@
+
+.wavebar-svg-object {
+    & svg {
+      pointer-events: none;
+    }
+    pointer-events: none;
+    position: fixed;
+    bottom: -250px;
+    left: 0%;
+    width: 200%; 
+    animation: 25s cubic-bezier(0.36, 0.45, 0.63, 0.53) 0s infinite  wavebar-svg-object;
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  .wavebar-svg-object:nth-of-type(3) {
+    left: 200%;
+  }
+  
+  .wavebar-svg-object:nth-of-type(4) {
+    bottom: -200px;
+    animation: 25s cubic-bezier(0.4, 0.2, 0.2, 0.2) -0.124s infinite normal none running wavebar-svg-object, 25s ease -1.24s infinite normal none running swell;
+    opacity: 1;
+  }
+  .wavebar-svg-object:nth-of-type(5) {
+    bottom: -200px;
+    left: 200%;
+    animation: 25s cubic-bezier(0.4, 0.2, 0.2, 0.2) -0.124s infinite normal none running wavebar-svg-object, 25s ease -1.24s infinite normal none running swell;
+    opacity: 1;
+  }
+  
+  
+  @-webkit-keyframes wavebar-svg-object {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(-100%);
+      }
+  }
+  @keyframes wavebar-svg-object {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(-100%);
+      }
+  }

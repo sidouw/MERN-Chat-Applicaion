@@ -1,0 +1,80 @@
+header {
+    background: $bg-color;
+    margin: 0;
+    display: flex;
+    height: $header-Height;
+    width: 100%;
+    align-items: center;
+    border-bottom: .5px solid $s-color;
+   
+    & a {
+        text-decoration:none;
+        cursor: pointer;
+        color:$p-color ;
+    }
+    & a:hover{
+        color: $s-color;
+    }
+    & svg {
+        width: 1.5rem;
+        height: 1.4rem;
+      }
+    
+}
+.headerLinks{
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    &__profile{
+        background: lighten($bg-color, $amount: 10);
+        align-self: center;
+        display: flex;
+        align-items: center;
+        border-radius: 50px;
+        padding: .3rem .5rem;
+        margin: 0 .5rem;
+        & span{
+            margin: 0;
+            margin-left: .5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        & img{
+            width: 2rem;
+            height: 2rem;
+            margin: 0;
+            border-radius: 50px;
+        }
+    }
+    
+    &__Link{
+        margin: 0 .5rem;
+        background: lighten($bg-color, $amount: 10);
+        padding: .5rem;
+        border-radius: 50px;
+    }
+    
+
+}
+.header__logo{
+    margin: 0 auto 0 2rem;
+    cursor: pointer;
+    & svg{
+        height: 3rem;
+        width: 3rem;
+        font-size: 1rem;
+        transition: all .3s ;
+        color:$h-color ;
+        // transition: color .3s;
+        &:hover{
+            transform : rotate(360deg);
+            color: $fg-color;
+        }
+    }
+}
+#header_user{
+    padding: 0 .4rem;
+    background: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    border-radius: 50px;
+}

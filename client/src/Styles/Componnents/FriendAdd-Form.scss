@@ -1,0 +1,27 @@
+.friendadd-form{
+    // background: magenta;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input{
+        // background: olive;
+        height: 1rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        border: none;
+        color: $fg-color;
+        padding: .8rem 1rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-radius: 20px;
+    }
+    button{
+        border: none;
+        padding: .5rem 1rem;
+        font-size: 1.5rem;
+        border-radius: 20px;
+        background: linear-gradient(-135deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.4) 100%);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 32px 0px;
+        color: $p-color;
+    }
+}

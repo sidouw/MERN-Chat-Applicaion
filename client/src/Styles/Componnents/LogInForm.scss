@@ -1,0 +1,35 @@
+.loginform{
+    display: flex;
+    flex-direction: column;
+    &__form{
+        display: flex;
+        flex-direction: column;
+    }
+    &__input{
+        padding: 1rem 0;
+        margin: .2rem 0;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+    }
+    &__title{
+        font-size: 2rem;
+    }
+    &__btn{
+        background: linear-gradient(-135deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.4) 100%);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 32px 0px;
+        color: $p-color;
+        font-size: larger;
+        font-weight: bold;
+        margin: auto;
+        margin-top: 1rem;
+        padding: .8rem 3rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+
+    }
+
+
+}
+

@@ -1,0 +1,76 @@
+.Friends-content{
+    max-width: 80%;
+    height: calc(90vh - #{$header_Height} );
+    margin:0  auto;
+    margin-top:2rem ;
+}
+
+.Friends-tab{
+    background: lighten($bg-color, $amount: 5) ;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 32px 0px;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    
+    &__list{
+        margin: 0;
+        padding: .5rem 0 .5rem 0 ;
+        border-bottom: solid 1px darken($bg-color, 5); ;
+        height: 2.5rem;
+        width: 100%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        &__tab{
+          cursor: pointer;
+          padding: .5rem;
+          border-radius: 50px;
+          background: rgba(255, 255, 255, 0.1);
+	        box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 32px 0px;
+            &--selected {     
+                background: linear-gradient(-135deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.4) 100%);
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 32px 0px;
+                border-color: $s-color;
+                font-weight: 700;
+                color: $p-color;
+                font-weight: 600;
+                
+              }
+        }
+    }
+    
+    &__panel{
+        margin: auto;
+        max-width: 80%;
+    }
+    
+
+    &::-webkit-scrollbar {
+        width: 0.3rem;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: none;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+          border-radius: 2px;
+        background: $fg-color;
+      }
+}
+
+@media(max-width:650px){
+  .Friends-tab{
+    background: $bg-color;
+    &__list{  
+      padding: 0;
+      &__tab{
+          padding: .2rem;
+          font-size: .8rem;
+      }
+    }
+  }
+}

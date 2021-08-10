@@ -1,0 +1,48 @@
+@import './settings.scss';
+@import './Componnents/container.scss';
+@import './Componnents/Box_Layout.scss';
+@import './Componnents/LogInForm.scss';
+@import './Componnents/Friends-list.scss';
+@import './Componnents/Chat.scss';
+@import './Componnents/Message.scss';
+@import './Componnents/ChatList.scss';
+@import './Componnents/FriendsPage.scss';
+@import './Componnents/FriendAdd-Form.scss';
+@import './Componnents/FriendRequest.scss';
+@import './Componnents/ProfilePage.scss';
+@import './Componnents/header.scss';
+@import './Componnents/Waves.scss';
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family:  'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(-135deg, rgb(138, 41, 41) 25%, rgb(47, 116, 196) 100%);
+  font-size: $font-size;
+  min-width: 360px;
+  color: $white-color;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+

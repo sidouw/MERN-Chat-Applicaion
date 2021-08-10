@@ -1,0 +1,79 @@
+.boxLayout{
+    width: 100vw;
+    height: 100vh;
+    background-size:contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.react-tabs{
+    background: $bg-color;
+    backdrop-filter: blur(6px);
+    width: 25rem;
+    height: 23rem;
+    padding: 1.6rem 2.6rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px -9px rgba(0,0,0,0.46);
+}
+
+
+.react-tabs {
+    -webkit-tap-highlight-color: transparent;
+    
+    &__tab-list {
+      margin: 0 0 10px;
+      padding: 0;
+    }
+  
+    &__tab {
+      display: inline-block;
+      bottom: -1px;
+      position: relative;
+      list-style: none;
+      margin: 0 1rem;
+      padding: 6px 1rem;
+      cursor: pointer;
+      color: $p-color;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 32px 0px;
+      background: rgba(255, 255, 255, 0.1)  ;
+      &--selected {
+        background: linear-gradient(-135deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.4) 100%);
+        font-weight: 700;
+      }
+  
+      &--disabled {
+        color: GrayText;
+        cursor: default;
+      }
+  
+      &:focus {
+          
+        box-shadow: 0 0 5px hsl(208, 99%, 50%);
+        border-color: hsl(208, 99%, 50%);
+        outline: none;
+  
+        &:after {
+          content: "";
+          position: absolute;
+          height: 5px;
+          left: -4px;
+          right: -4px;
+          bottom: -5px;
+          background: #fff;
+          
+        }
+      }
+    }
+  
+    &__tab-panel {
+      display: none;
+      
+  
+      &--selected {
+        display: block;
+      }
+    }
+  }
