@@ -1,4 +1,4 @@
-import React, {useCallback,useState} from 'react'
+import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 import { useSelector,useDispatch} from "react-redux";
 import {updatePhotoUrl} from "../store/Reducers/userReducer";
@@ -76,16 +76,3 @@ export default ProfilePage
 
 
 
-
-// import {AddFriend,DeleteFriend} from '../utils/UsersDataHandler'
-    // const handleAddFriend = ()=>{
-    //     AddFriend(user.username).then(({error,ok})=>{
-            
-    //     })
-    // }
-
-    // const handleDeleteFriend = ()=>{
-    //     DeleteFriend(user._id).then(data=>{
-    //     })
-
-    // }

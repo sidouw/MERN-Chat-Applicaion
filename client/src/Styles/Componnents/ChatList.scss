@@ -1,6 +1,7 @@
 .Chatitem-list{
     list-style: none;
     padding: 0;
+    margin: 0;
     text-decoration: none;
     height: 95%;
     overflow-y: scroll;
@@ -34,12 +35,13 @@
     overflow: hidden;
     height: 100%;
     display: flex;
+    width: 100%;
     flex-direction: column;
 }
 
 .last-chat-elem{
-    margin: .2rem 1rem .2rem 0;
-    padding: .5rem;
+    margin: .2rem 0rem .2rem 0;
+    padding: .5rem 0;
     cursor: pointer;
     border-radius: 10px;
     transition: background-color .1s;
@@ -56,7 +58,6 @@
         position: relative;
     }
     &__content{
-        display: flex;
         flex-direction: column;
         width: 100%;
         display: none;
@@ -70,14 +71,13 @@
     }
     &__user{
         padding-top: .5rem;
-        width: 2rem;
         font-size: 1rem;
         font-weight: 600;
     }
     &__message{  
         height: 1rem;
         font-size: .8rem;
-        width: 9rem;
+        width: 8rem;
         overflow: hidden;
     }
     &__time{
@@ -106,7 +106,7 @@
     align-self: center;
     background: $h-color;
     color: $fg-color;
-    width: 100%;
+    width: 80%;
     height: 2rem;
     font-size: 1rem;
     font-weight: 600;
@@ -117,22 +117,21 @@
 }
 
 
-@media(min-width:600px){
+@media(min-width:800px){
     .last-chat-elem{
         &__content{
             display: flex;
         }
-}
-.Chat-List-container{
-    width: 22rem;
-}
-.chat-filter{
-    width: 22rem;
-}
-
-.last-chat-elem__status{
-    top: 70%;
-    left: 20%;
-}
+    }
+    .Chatitem-list-container{
+        width: 19rem;
+    }
+    .last-chat-elem__status{
+        top: 70%;
+        left: 20%;
+    }
+    .chat-filter {
+        width: 90%;
+    }
 }
 

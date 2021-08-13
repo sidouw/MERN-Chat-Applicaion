@@ -12,13 +12,10 @@ const getUserRooms = async ()=>{
 }
 
 const addRoom = async (id)=>{
-    const data = await fetch('/rooms',{
-        method:'POST',
+    const data = await fetch('/rooms/u/'+id,{
         headers:{
             'Authorization':'Bearer '+cookie.get('token'),
-            "Content-type": "application/json"
-        },
-         body:JSON.stringify({userId:id})
+        }
     })
 
     return data.json()

@@ -45,3 +45,28 @@
           transform: translateX(-100%);
       }
   }
+
+
+@media(max-width:1000px){
+  .wavebar-svg-object {
+    bottom: -110px;
+  }
+  .wavebar-svg-object:nth-of-type(4) {
+    bottom: -160px;
+  }
+  .wavebar-svg-object:nth-of-type(5) {
+    bottom: -160px;
+  }
+}
+
+@media(max-width:1000px){
+  .wavebar-svg-object {
+    bottom: -30px;
+  }
+  .wavebar-svg-object:nth-of-type(4) {
+    bottom: -40px;
+  }
+  .wavebar-svg-object:nth-of-type(5) {
+    bottom: -40px;
+  }
+}

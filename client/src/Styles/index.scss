@@ -13,7 +13,10 @@
 @import './Componnents/header.scss';
 @import './Componnents/Waves.scss';
 
-
+html{
+  margin: 0;
+  padding: 0;
+}
 
 body {
   margin: 0;
@@ -45,4 +48,3 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
-

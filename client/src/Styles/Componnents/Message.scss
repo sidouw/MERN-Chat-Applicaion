@@ -47,3 +47,17 @@
 .Message.own{
     align-items: flex-end;
 }
+
+
+.MessagesList{
+    padding: 0;
+}
+@media(max-width:800px){ 
+
+    .Message{
+
+        &__body{
+            margin: .5rem 1rem 1rem 3.8rem;
+        }
+    }
+}

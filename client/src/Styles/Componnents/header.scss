@@ -78,3 +78,9 @@ header {
     text-align: center;
     border-radius: 50px;
 }
+@media(max-width:600px){
+    .header__logo{
+        margin: 0 1rem 0 .5rem; 
+    }
+}
+

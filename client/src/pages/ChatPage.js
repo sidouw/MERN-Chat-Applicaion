@@ -60,8 +60,12 @@ const user = useSelector((state) => state.user.user);
                 <Chat sendMessage= {sendMessage}/>
             </div>
             <div className = "chatOptions">
-                <div className = "emptyChat">
-                    <span>Coming Soon</span>
+                <div className = "chatOption-Container">
+                    <div className = "chatOption-Container__userInfo">
+                        <img src = '/img/Happiness.jpg'/>
+                        <span> User Name </span>
+                    </div>
+
                 </div>
             </div>
         </div>

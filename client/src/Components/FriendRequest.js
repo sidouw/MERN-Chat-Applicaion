@@ -16,11 +16,11 @@ const FriendRequest = ({Request})=>{
         setdisable(true)
         HandleRequest(Request._id,'A').then(data=>{
             dispatch(updateContacts(Request._id))
-                addRoom(Request._id).then((ret)=>{
-                    if (!ret.error)
-                        toast.success("Accepted")
-                        dispatch(updateRooms({room:ret,messages:[]}))
-                })
+            addRoom(Request._id).then((ret)=>{
+                if (!ret.error)
+                    toast.success("Accepted")
+                    dispatch(updateRooms({room:ret,messages:[]}))
+            })
         })
         
     }   
