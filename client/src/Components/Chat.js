@@ -5,24 +5,29 @@ import  moment  from 'moment';
 import {getRoomMessages} from '../utils/RoomsDataHandler'
 import MessagesList from './MessagesList'
 import { useSelector,useDispatch } from 'react-redux'
-import { updateRooms,chatSelector} from "../store/Reducers/chatReducer";
+import { updateRooms,chatSelector,updateRoomMessages} from "../store/Reducers/chatReducer";
 
 const Chat = ({sendMessage})=>{
 
     const dispatch = useDispatch()
     const [partner,setPartner] = useState([{}]) 
     const [loading,setloading] = useState(false) 
-    
+    const [hasMore,setHasMore] = useState(false) 
+    const [page,setPage] = useState(0)
     const user = useSelector((state) => state.user.user);
     const {currentChat:room,rooms} = useSelector(chatSelector);
 
     useEffect(()=>{
-      
+        
         if (room){
                 setloading(true) 
                 if (rooms[room._id] === undefined){
+                    setPage(0)
                     getRoomMessages(room._id).then((roomMessages)=>{
                         dispatch(updateRooms({room:room._id,messages:roomMessages}))
+                        if (roomMessages.length === 10){
+                            setHasMore(true)
+                        }
                         if(!room.error){
                             room.users.forEach(ruser => {
                                 if(ruser._id !== user._id ){
@@ -34,6 +39,8 @@ const Chat = ({sendMessage})=>{
                     })
                 }else{
                         if(!room.error){
+                            setHasMore(true)
+                            setPage(Math.ceil(rooms[room._id].length/10))
                             room.users.forEach(ruser => {
                                 if(ruser._id !== user._id ){
                                     setPartner(ruser)
@@ -46,7 +53,15 @@ const Chat = ({sendMessage})=>{
                 
     },[room])
 
+    useEffect(()=>{
+        if(hasMore){
+            getRoomMessages(room._id,(page)*10).then((roomMessages)=>{
+                dispatch(updateRoomMessages({room:room._id,messages:roomMessages}))
+                setHasMore(roomMessages.length === 10)
+            })
 
+        }
+    },[page])
 
     const handleSumbmit = (e)=>{
         e.preventDefault()
@@ -56,6 +71,10 @@ const Chat = ({sendMessage})=>{
             sendMessage(message)
             e.target.elements[0].value = ''
         }
+    }
+    const UpdateMessages = ()=>{
+        setPage((prv)=> prv+1)
+
     }
 
     return(
@@ -87,7 +106,7 @@ const Chat = ({sendMessage})=>{
                 <img height = '60px' width = "60px" src='/img/Happiness.jpg' className ='last-chat-elem__image'  alt ='Profile pic '/>
                 <span className = 'chatbox__header__title'>{partner.username }</span>
             </div>
-            {rooms[room._id] && <MessagesList messages = {rooms[room._id]}  partner = {partner}/>}
+            {rooms[room._id] && <MessagesList messages = {rooms[room._id]}  partner = {partner} endReached= {UpdateMessages} />}
             <div className = "chatbox--input">
             
                 <form className = "chatbox--input--form" onSubmit = {handleSumbmit}>

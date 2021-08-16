@@ -28,7 +28,7 @@ export const chatsSlice = createSlice({
       }
     },
     updateRoomMessages : (state, action)=>{
-      state.rooms[action.payload.room] = [...state.rooms[action.payload.room],action.payload.message]  
+      state.rooms[action.payload.room] = [...state.rooms[action.payload.room],...action.payload.messages]  
     }
   },
 });

@@ -20,8 +20,8 @@ const addRoom = async (id)=>{
 
     return data.json()
 }
-const getRoomMessages = async (id)=>{
-    const data = await fetch('/messages/r/'+id,{
+const getRoomMessages = async (id,skip=0,limit=10)=>{
+    const data = await fetch('/messages/r/'+id+'?skip='+skip+'&limit='+limit,{
         headers:{
             'Authorization':'Bearer '+cookie.get('token')
          }

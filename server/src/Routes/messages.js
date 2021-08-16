@@ -21,9 +21,10 @@ router.get('/messages/u/:id',auth,async(req,res)=>{
 router.get('/messages/r/:id',auth,async(req,res)=>{
 
  try {
-     const messages =await Message.find({room:req.params.id})
+     const messages =await Message.find({room:req.params.id}).skip(parseInt(req.query.skip)).limit(parseInt(req.query.limit)).sort('icat')
      res.send(messages)
  } catch (error) {
+     console.log(error);
     res.status(400).send(error)
  }
 
