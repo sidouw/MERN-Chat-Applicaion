@@ -50,7 +50,7 @@ const MessagesList = ({messages,partner,endReached})=>{
     return (        
     <div ref={chatboxref}  className = "chatbox--messages">
         <ul className = 'MessagesList'>
-        {messages.slice(0).reverse().map((message,index)=>{
+        {messages.slice(0).map((message,index)=>{
             if (index ===0) {
                 return(
                 <React.Fragment key={index}>  
